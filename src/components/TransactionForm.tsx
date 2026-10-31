@@ -23,9 +23,9 @@ export default function TransactionForm({onAdd}:{
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="h-120 w-120 bg-gray-100 px-4 rounded-2xl ">
-          <h1 className="text-2xl text-gray-800 p-2 font-bold ">
-            Add Transation
+        <div className="w-full rounded-2xl bg-gray-100 px-4 pb-4 pt-12 sm:px-6 sm:pb-6">
+          <h1 className="p-2 text-xl font-bold text-gray-800 sm:text-2xl">
+            Add Transaction
           </h1>
 
           <div className="flex flex-col py-2">
@@ -45,7 +45,7 @@ export default function TransactionForm({onAdd}:{
             <input
               name="amount"
               type="number"
-              className="border rounded px-1 py-1"
+              className="rounded border px-2 py-2"
               placeholder="Amount"
             />
           </div>
@@ -57,7 +57,7 @@ export default function TransactionForm({onAdd}:{
             <input
               name="title"
               type="text"
-              className="border rounded px-1 py-1"
+              className="rounded border px-2 py-2"
               placeholder="Groceries"
             />
           </div>
@@ -69,7 +69,7 @@ export default function TransactionForm({onAdd}:{
             <input
               name="category"
               type="text"
-              className="border rounded px-1 py-1"
+              className="rounded border px-2 py-2"
               placeholder="“Food” or “Salary”"
             />
           </div>
@@ -78,11 +78,11 @@ export default function TransactionForm({onAdd}:{
             <label htmlFor="date" className="px-0.5 font-bold">
               Date
             </label>
-            <input type="date" name="date" className="border rounded px-1 py-1" />
+            <input type="date" name="date" className="rounded border px-2 py-2" />
           </div>
 
           <div className="flex items-center justify-center py-1">
-            <button className="px-6 py-1.5 text-gray-200 bg-blue-800 hover:bg-blue-600 rounded-2xl">
+            <button className="w-full rounded-2xl bg-blue-800 px-6 py-2 text-gray-200 hover:bg-blue-600 sm:w-auto">
               Submit
             </button>
           </div>
