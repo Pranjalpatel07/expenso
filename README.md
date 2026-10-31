@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expenso — Expense Tracker
 
-## Getting Started
+Keep your income and expenses organized with **Expenso**, a responsive personal finance dashboard. Add transactions, review your totals, filter activity by month, and compare income with expenses over the last six months.
 
-First, run the development server:
+<div align="center">
+  <a href="https://expenso-beige.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Expenso-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Visit the live Expenso demo" />
+  </a>
+</div>
+
+## 🖥️ Preview
+
+<div align="center">
+  <img src="./public/expenso-dashboard.png" alt="Expenso dashboard showing transaction totals, recent transactions, and a monthly income and expenses chart" width="720" />
+</div>
+
+## ✨ Features
+
+- 💰 Track income, expenses, and your calculated balance.
+- ➕ Add transactions with a type, amount, title, category, and date.
+- 📅 Browse recent transactions and filter them by month.
+- 📈 Compare income and expenses in a six-month line chart.
+- 💾 Save transactions in browser `localStorage` so they remain available on that browser.
+- 📱 Responsive dashboard and transaction form for mobile and desktop screens.
+
+## 🧰 Built with
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.4.3-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 16.4.3" />
+  <img src="https://img.shields.io/badge/React-19.3.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19.3.0" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
+  <img src="https://img.shields.io/badge/Recharts-3.10.1-22B5BF?style=for-the-badge" alt="Recharts 3.10.1" />
+  <img src="https://img.shields.io/badge/Lucide%20React-Icons-F56565?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide React icons" />
+</div>
+
+## 🚀 Run locally
+
+### Requirements
+
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm
+
+### Setup
 
 ```bash
+git clone <your-repository-url>
+cd Expenso
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 Available commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## 🗂️ Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── TransactionForm.tsx
+└── types/
+    └── transaction.ts
+public/
+└── expenso-dashboard.png
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💡 Data and privacy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Transactions are stored in the browser's `localStorage`. They are specific to the browser and device being used; they do not sync between devices and are not backed up to a server. Clearing the browser's site data will remove saved transactions.
 
-## Deploy on Vercel
+## 🌐 Live demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Try Expenso at **[expenso-beige.vercel.app](https://expenso-beige.vercel.app/)**.
