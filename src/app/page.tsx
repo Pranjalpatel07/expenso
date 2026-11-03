@@ -1,7 +1,7 @@
 "use client";
 import TransactionForm from "@/components/TransactionForm";
 import { Transaction } from "@/types/transaction";
-import { X } from "lucide-react";
+import { Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   CartesianGrid,
@@ -170,16 +170,35 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <p
-                    className={`self-end sm:self-auto ${
-                      item.type === "income"
-                        ? "font-semibold text-green-400"
-                        : "font-semibold text-red-400"
-                    }`}
-                  >
-                    {item.type === "income" ? "+" : "-"}₹
-                    {item.amount.toLocaleString("en-IN")}
-                  </p>
+                  <div className="flex items-center justify-between gap-4 self-end sm:self-auto">
+                    <p
+                      className={
+                        item.type === "income"
+                          ? "font-semibold text-green-400"
+                          : "font-semibold text-red-400"
+                      }
+                    >
+                      {item.type === "income" ? "+" : "-"}₹
+                      {item.amount.toLocaleString("en-IN")}
+                    </p>
+                    <button
+                      type="button"
+                      className="rounded-lg p-2 text-slate-400 transition hover:bg-red-500/10 hover:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400"
+                      onClick={() => {
+                        if (window.confirm(`Delete "${item.title}"?`)) {
+                          setTransactions((current) =>
+                            current.filter(
+                              (transaction) => transaction.id !== item.id,
+                            ),
+                          );
+                        }
+                      }}
+                      aria-label={`Delete ${item.title}`}
+                      title="Delete transaction"
+                    >
+                      <Trash2 className="h-4 w-4" aria-hidden="true" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -197,7 +216,7 @@ export default function Home() {
           </div>
           <div className="h-64 w-full rounded-2xl bg-slate-800 sm:h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={monthlyTotals} margin={{ top: 8, right: 8, left: -20, bottom: 4 }}>
+              <LineChart data={monthlyTotals} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
                 <CartesianGrid stroke="#e2e8f0" strokeDasharray="4 4" />
                 <XAxis
                   dataKey="month"
@@ -211,7 +230,7 @@ export default function Home() {
                   axisLine={false}
                   tickLine={false}
                   tick={{ fill: "#cbd5e1", fontSize: 10 }}
-                  width={52}
+                  width={60}
                 />
                 <Tooltip
                   contentStyle={{
@@ -261,10 +280,10 @@ export default function Home() {
 
         {transaction && (
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/50 p-3 backdrop-blur-sm sm:p-6">
-            <div className="relative my-auto w-full max-w-xl rounded-2xl bg-white p-3 shadow-xl sm:p-6">
+            <div className="relative my-auto w-full max-w-xl rounded-2xl border border-slate-600 bg-slate-800 p-3 shadow-xl sm:p-6">
               <button
                 type="button"
-                className="absolute right-5 top-5 z-10 rounded p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                className="absolute right-5 top-5 z-10 rounded p-1 text-slate-400 transition hover:bg-slate-700 hover:text-slate-100"
                 onClick={() => setTransaction(false)}
                 aria-label="Close transaction form"
               >

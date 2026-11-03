@@ -18,6 +18,7 @@ Keep your income and expenses organized with **Expenso**, a responsive personal 
 
 - 💰 Track income, expenses, and your calculated balance.
 - ➕ Add transactions with a type, amount, title, category, and date.
+- 🗑️ Delete transactions with a confirmation prompt.
 - 📅 Browse recent transactions and filter them by month.
 - 📈 Compare income and expenses in a six-month line chart.
 - 💾 Save transactions in browser `localStorage` so they remain available on that browser.
